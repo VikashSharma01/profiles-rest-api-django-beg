@@ -18,7 +18,7 @@ class UserProfileManager(BaseUserManager):
         user = self.model(email=email, name=name)
 
         user.set_password(password)
-        user.save(using=seld._db)
+        user.save(using=self._db)
 
         return user
 
@@ -56,7 +56,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
         return self.name
 
-    def get_short_name(arg):
+    def get_short_name(self):
         """Used to get a user short name."""
 
         return self.name
